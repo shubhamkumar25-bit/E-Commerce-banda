@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <radialGradient id="specBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#F8F4E9" />
+      <stop offset="100%" stop-color="#E2EEE0" />
+    </radialGradient>
+    <linearGradient id="goldS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E8BA" />
+      <stop offset="40%" stop-color="#C7A45B" />
+      <stop offset="100%" stop-color="#8E6F28" />
+    </linearGradient>
+    <linearGradient id="copperS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB74D" />
+      <stop offset="50%" stop-color="#E64A19" />
+      <stop offset="100%" stop-color="#BF360C" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#specBg)" />
+  <ellipse cx="400" cy="720" rx="320" ry="32" fill="#103A29" opacity="0.18" />
+
+  <!-- Special Offer Starburst Badge -->
+  <g transform="translate(640, 160)">
+    <circle cx="0" cy="0" r="58" fill="#103A29" stroke="url(#goldS)" stroke-width="3" />
+    <text x="0" y="-12" font-family="'Cinzel', serif" font-size="11" font-weight="700" fill="#E5C778" text-anchor="middle">SPECIAL</text>
+    <text x="0" y="8" font-family="'Cinzel', serif" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">30%</text>
+    <text x="0" y="24" font-family="'Cinzel', serif" font-size="10" font-weight="700" fill="#E5C778" text-anchor="middle">OFF</text>
+  </g>
+
+  <!-- Trio Bottle Display (3 Bottles of Liquid Manjan) -->
+  <!-- Left Bottle -->
+  <g transform="translate(190, 260) scale(0.8)">
+    <rect x="52" y="95" width="68" height="20" rx="3" fill="url(#goldS)" />
+    <path d="M52 115 C28 130 6 165 2 210 L2 450 C2 470 18 482 42 482 L132 482 C156 482 172 470 172 450 L172 210 C168 165 146 130 120 115 Z" fill="#1B4D33" />
+    <rect x="18" y="200" width="138" height="230" rx="6" fill="#FBF8F1" stroke="url(#goldS)" stroke-width="1.5" />
+    <text x="86" y="250" font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#174D35" text-anchor="middle">GIWANSALLY</text>
+  </g>
+
+  <!-- Center Hero Bottle -->
+  <g transform="translate(325, 200) scale(0.92)">
+    <rect x="52" y="95" width="68" height="20" rx="3" fill="url(#goldS)" />
+    <path d="M52 115 C28 130 6 165 2 210 L2 450 C2 470 18 482 42 482 L132 482 C156 482 172 470 172 450 L172 210 C168 165 146 130 120 115 Z" fill="#14432C" />
+    <rect x="18" y="200" width="138" height="230" rx="6" fill="#FBF8F1" stroke="url(#goldS)" stroke-width="2" />
+    <text x="86" y="250" font-family="'Cinzel', serif" font-size="12" font-weight="800" fill="#174D35" text-anchor="middle">GIWANSALLY</text>
+    <text x="86" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#C7A45B" text-anchor="middle">ROYAL EDITION</text>
+  </g>
+
+  <!-- Right Bottle -->
+  <g transform="translate(470, 260) scale(0.8)">
+    <rect x="52" y="95" width="68" height="20" rx="3" fill="url(#goldS)" />
+    <path d="M52 115 C28 130 6 165 2 210 L2 450 C2 470 18 482 42 482 L132 482 C156 482 172 470 172 450 L172 210 C168 165 146 130 120 115 Z" fill="#1B4D33" />
+    <rect x="18" y="200" width="138" height="230" rx="6" fill="#FBF8F1" stroke="url(#goldS)" stroke-width="1.5" />
+    <text x="86" y="250" font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#174D35" text-anchor="middle">GIWANSALLY</text>
+  </g>
+
+  <!-- Included Pure Copper Tongue Cleaner lying in front -->
+  <g transform="translate(250, 610) rotate(-5)">
+    <path d="M20 50 Q150 -10 280 50 L290 80 L270 80 L260 55 Q150 15 40 55 L30 80 L10 80 Z" fill="url(#copperS)" />
+    <rect x="70" y="70" width="160" height="24" rx="12" fill="#103A29" />
+    <text x="150" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#E5C778" text-anchor="middle">+ FREE COPPER CLEANER</text>
+  </g>
+
+  <text x="400" y="760" font-family="'Cinzel', serif" font-size="14" font-weight="800" fill="#174D35" text-anchor="middle" letter-spacing="2">GIWANSALLY ROYAL COMPLETE ORAL KIT</text>
+</svg>
+
