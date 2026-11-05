@@ -5,8 +5,8 @@ import { useAuth } from '../../context/AuthContext';
 import { api } from '../../services/api';
 
 export const AdminLogin: React.FC = () => {
-  const [email, setEmail] = useState('admin@giwansally.com');
-  const [password, setPassword] = useState('Admin@123');
+  const [email, setEmail] = useState('jeevanshailipvtltd@gmail.com');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,18 +26,7 @@ export const AdminLogin: React.FC = () => {
       login(data.token, data.admin);
       navigate(from, { replace: true });
     } catch (err: any) {
-      // If backend offline or credentials mock fallback for smooth testing
-      if (email.trim().toLowerCase() === 'admin@giwansally.com' && password === 'Admin@123') {
-        login('mock_admin_jwt_token', {
-          id: 'admin_1',
-          name: 'GIWANSALLY Admin',
-          email: 'admin@giwansally.com',
-          role: 'superadmin'
-        });
-        navigate(from, { replace: true });
-      } else {
-        setError(err.message || 'Invalid credentials. Default: admin@giwansally.com / Admin@123');
-      }
+      setError(err.message || 'Invalid credentials. Check the configured admin account.');
     } finally {
       setLoading(false);
     }
@@ -50,9 +39,9 @@ export const AdminLogin: React.FC = () => {
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="w-16 h-16 rounded-2xl bg-forest/10 mx-auto flex items-center justify-center">
-            <img src="/logo-icon.svg" alt="GIWANSALLY" className="w-10 h-10 object-contain" />
+            <img src="/jeevan-shaili-logo.png" alt="JEEVAN SHAILI" className="w-10 h-10 object-contain" />
           </div>
-          <h1 className="font-serif text-2xl font-bold text-forest">GIWANSALLY Admin Portal</h1>
+          <h1 className="font-serif text-2xl font-bold text-forest">JEEVAN SHAILI Admin Portal</h1>
           <p className="text-xs text-slate-500">Secure store &amp; order management console</p>
         </div>
 
@@ -73,7 +62,7 @@ export const AdminLogin: React.FC = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@giwansally.com"
+                placeholder="jeevanshailipvtltd@gmail.com"
                 className="w-full pl-10 pr-4 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-800 font-medium focus:outline-none focus:border-gold"
               />
             </div>
@@ -92,13 +81,6 @@ export const AdminLogin: React.FC = () => {
                 className="w-full pl-10 pr-4 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-800 font-medium focus:outline-none focus:border-gold"
               />
             </div>
-          </div>
-
-          {/* Quick Demo Credentials Reminder */}
-          <div className="p-3 bg-cream-light rounded-xl border border-cream-dark text-[11px] text-slate-600 space-y-1">
-            <p className="font-bold text-forest">Default Store Credentials:</p>
-            <p>Email: <code className="text-forest font-bold">admin@giwansally.com</code></p>
-            <p>Password: <code className="text-forest font-bold">Admin@123</code></p>
           </div>
 
           <button
@@ -121,4 +103,3 @@ export const AdminLogin: React.FC = () => {
     </div>
   );
 };
-

@@ -61,10 +61,10 @@ export const Shop: React.FC = () => {
         <div className="relative z-10 space-y-3 max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-widest text-gold">Ayurvedic Oral Formulations</span>
           <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Shop GIWANSALLY Collection
+            Shop JEEVAN SHAILI Collection
           </h1>
           <p className="text-cream/80 text-sm sm:text-base leading-relaxed">
-            Discover our breakthrough liquid manjan range, herbal sensitive oral drops, and comprehensive wellness bundles crafted in Banda, Uttar Pradesh.
+            Discover Jeevan Shaili Ayurvedic Dant Manjan, inspired by traditional Ayurvedic oral care practices.
           </p>
         </div>
       </div>
@@ -232,4 +232,3 @@ export const Shop: React.FC = () => {
     </div>
   );
 };
-

@@ -17,14 +17,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('giwansally_admin_token');
+    const token = localStorage.getItem('jeevan_shaili_admin_token');
     if (token) {
       api.getAdminMe()
         .then((data) => {
           setAdmin(data);
         })
         .catch(() => {
-          localStorage.removeItem('giwansally_admin_token');
+          localStorage.removeItem('jeevan_shaili_admin_token');
           setAdmin(null);
         })
         .finally(() => {
@@ -36,12 +36,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = (token: string, adminUser: AdminUser) => {
-    localStorage.setItem('giwansally_admin_token', token);
+    localStorage.setItem('jeevan_shaili_admin_token', token);
     setAdmin(adminUser);
   };
 
   const logout = () => {
-    localStorage.removeItem('giwansally_admin_token');
+    localStorage.removeItem('jeevan_shaili_admin_token');
     setAdmin(null);
   };
 
@@ -67,4 +67,3 @@ export const useAuth = () => {
   }
   return context;
 };
-

@@ -1,7 +1,7 @@
 {
-  "name": "giwansally-ecommerce",
+  "name": "jeevan-shaili-ecommerce",
   "version": "1.0.0",
-  "description": "GIWANSALLY – Premium Ayurvedic Liquid Manjan E-Commerce Website & Admin CMS",
+  "description": "JEEVAN SHAILI – Ayurvedic Dant Manjan E-Commerce Website & Admin CMS",
   "scripts": {
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
@@ -10,14 +10,13 @@
     "seed:backend": "cd backend && npm run seed"
   },
   "keywords": [
-    "giwansally",
+    "jeevan-shaili",
     "ayurvedic",
-    "liquid-manjan",
+    "dant-manjan",
     "e-commerce",
     "banda-up",
     "razorpay"
   ],
-  "author": "GIWANSALLY",
+  "author": "JEEVAN SHAILI PVT. LTD.",
   "license": "ISC"
 }
-

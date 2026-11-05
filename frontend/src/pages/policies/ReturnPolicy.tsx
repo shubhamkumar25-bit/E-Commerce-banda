@@ -9,12 +9,12 @@ export const ReturnPolicy: React.FC = () => {
       <div className="bg-white p-8 rounded-3xl border border-cream-dark text-slate-700 text-sm space-y-4 leading-relaxed">
         <h2 className="font-serif font-bold text-lg text-forest">1. Hygiene &amp; Oral Care Standards</h2>
         <p>
-          Due to the hygienic nature of Ayurvedic oral care liquid products, opened or unsealed bottles cannot be accepted for return or resale once delivered.
+          Due to the hygienic nature of Ayurvedic oral care products, opened or unsealed products cannot be accepted for return or resale once delivered.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">2. Damaged or Defective Items</h2>
         <p>
-          If your package arrives in a damaged condition or with a broken bottle seal, please notify our customer care team within <strong>48 hours of delivery</strong> via phone (+91 8840091758) or email (shubhamcoder@gmail.com) along with a photo of the received parcel.
+          If your package arrives damaged, please notify our customer care team within <strong>48 hours of delivery</strong> via phone (+91 7607033877) or email (jeevanshailipvtltd@gmail.com) along with a photo of the received parcel.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">3. Replacement / Refund Process</h2>
@@ -25,4 +25,3 @@ export const ReturnPolicy: React.FC = () => {
     </div>
   );
 };
-

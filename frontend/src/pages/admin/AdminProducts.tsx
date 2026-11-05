@@ -29,14 +29,14 @@ export const AdminProducts: React.FC = () => {
     category: '',
     price: '',
     salePrice: '',
-    volume: '100ml',
+    volume: 'Tooth powder',
     stock: '100',
     shortDescription: '',
     description: '',
-    howToUse: 'Pour 5-10 drops directly on toothbrush or swish in mouth for 2 minutes after brushing.',
-    storage: 'Store in a cool and dry place away from direct sunlight.',
-    manufacturingInfo: 'GIWANSALLY Herbals, Banda, Uttar Pradesh, India.',
-    expiryInfo: 'Best before 24 months from MFD.',
+    howToUse: 'Use according to the instructions on the product packaging.',
+    storage: '',
+    manufacturingInfo: 'JEEVAN SHAILI PVT. LTD., Bangalipura, Banda, Uttar Pradesh, India.',
+    expiryInfo: '',
     isFeatured: false,
     isBestSeller: false,
     isActive: true,
@@ -45,7 +45,7 @@ export const AdminProducts: React.FC = () => {
 
   const loadData = () => {
     setLoading(true);
-    Promise.all([api.getProducts(), api.getCategories()]).then(([prodData, catData]) => {
+    Promise.all([api.getAdminProducts(), api.getAdminCategories()]).then(([prodData, catData]) => {
       setProducts(prodData.products || []);
       setCategories(catData || []);
       setLoading(false);
@@ -63,18 +63,18 @@ export const AdminProducts: React.FC = () => {
       category: categories[0]?._id || '',
       price: '',
       salePrice: '',
-      volume: '100ml',
+      volume: 'Tooth powder',
       stock: '100',
       shortDescription: '',
       description: '',
-      howToUse: 'Pour 5-10 drops directly on toothbrush or swish in mouth for 2 minutes after brushing.',
-      storage: 'Store in a cool and dry place away from direct sunlight.',
-      manufacturingInfo: 'GIWANSALLY Herbals, Banda, Uttar Pradesh, India.',
-      expiryInfo: 'Best before 24 months from MFD.',
+      howToUse: 'Use according to the instructions on the product packaging.',
+      storage: '',
+      manufacturingInfo: 'JEEVAN SHAILI PVT. LTD., Bangalipura, Banda, Uttar Pradesh, India.',
+      expiryInfo: '',
       isFeatured: false,
       isBestSeller: false,
       isActive: true,
-      imageUrl: '/images/products/bottle-hero.png'
+      imageUrl: '/images/products/jeevan-shaili-dant-manjan.jpg'
     });
     setModalOpen(true);
   };
@@ -98,7 +98,7 @@ export const AdminProducts: React.FC = () => {
       isFeatured: p.isFeatured || false,
       isBestSeller: p.isBestSeller || false,
       isActive: p.isActive !== undefined ? p.isActive : true,
-      imageUrl: p.images[0] || '/images/products/bottle-hero.png'
+      imageUrl: p.images[0] || '/images/products/jeevan-shaili-dant-manjan.jpg'
     });
     setModalOpen(true);
   };
@@ -158,7 +158,7 @@ export const AdminProducts: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-serif text-2xl font-bold text-forest">Product Management</h1>
-          <p className="text-xs text-slate-500">Manage GIWANSALLY Liquid Manjan &amp; Ayurvedic formulations</p>
+          <p className="text-xs text-slate-500">Manage JEEVAN SHAILI Ayurvedic Dant Manjan products</p>
         </div>
 
         <button
@@ -206,7 +206,7 @@ export const AdminProducts: React.FC = () => {
                 <tr key={prod._id} className="hover:bg-slate-50/80 transition">
                   <td className="py-4 px-6 flex items-center gap-3">
                     <img
-                      src={prod.images[0] || '/images/products/bottle-hero.png'}
+                      src={prod.images[0] || '/images/products/jeevan-shaili-dant-manjan.jpg'}
                       alt={prod.name}
                       className="w-12 h-12 object-contain p-1 bg-cream-light rounded-xl border border-cream-dark shrink-0"
                     />
@@ -290,7 +290,7 @@ export const AdminProducts: React.FC = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. GIWANSALLY Ayurvedic Liquid Manjan (100ml)"
+                    placeholder="e.g. Jeevan Shaili Ayurvedic Dant Manjan"
                     className="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:border-gold font-medium"
                   />
                 </div>
@@ -360,7 +360,7 @@ export const AdminProducts: React.FC = () => {
                     type="text"
                     value={formData.imageUrl}
                     onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                    placeholder="/images/products/bottle-hero.png"
+                    placeholder="/images/products/jeevan-shaili-dant-manjan.jpg"
                     className="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:border-gold"
                   />
                 </div>
@@ -445,4 +445,3 @@ export const AdminProducts: React.FC = () => {
     </div>
   );
 };
-

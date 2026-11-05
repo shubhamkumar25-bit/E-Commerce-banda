@@ -17,7 +17,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
     if (existing) {
       res.json({
         success: true,
-        message: 'You are already subscribed to GIWANSALLY herbal health newsletters!'
+        message: 'You are already subscribed to JEEVAN SHAILI herbal health newsletters!'
       });
       return;
     }
@@ -26,7 +26,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({
       success: true,
-      message: 'Thank you for subscribing to GIWANSALLY Ayurvedic wellness updates!'
+      message: 'Thank you for subscribing to JEEVAN SHAILI Ayurvedic wellness updates!'
     });
   } catch (error: any) {
     res.status(500).json({ success: false, message: error.message || 'Server error' });
@@ -34,4 +34,3 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 });
 
 export default router;
-

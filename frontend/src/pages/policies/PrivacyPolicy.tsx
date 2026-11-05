@@ -9,7 +9,7 @@ export const PrivacyPolicy: React.FC = () => {
       <div className="bg-white p-8 rounded-3xl border border-cream-dark text-slate-700 text-sm space-y-4 leading-relaxed">
         <h2 className="font-serif font-bold text-lg text-forest">1. Introduction</h2>
         <p>
-          At GIWANSALLY (Banda, Uttar Pradesh, India), we respect your privacy. This policy outlines how we collect, handle, and protect your information when you visit our website or purchase our Ayurvedic Liquid Manjan.
+          At JEEVAN SHAILI PVT. LTD. (Banda, Uttar Pradesh, India), we respect your privacy. This policy outlines how we collect, handle, and protect your information when you visit our website or purchase our Ayurvedic Dant Manjan.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">2. Information We Collect</h2>
@@ -25,12 +25,11 @@ export const PrivacyPolicy: React.FC = () => {
         <h2 className="font-serif font-bold text-lg text-forest">4. Contact Information</h2>
         <p>
           For privacy inquiries, please contact: <br />
-          Email: <a href="mailto:shubhamcoder@gmail.com" className="text-forest font-bold">shubhamcoder@gmail.com</a><br />
-          Phone: +91 8840091758<br />
+          Email: <a href="mailto:jeevanshailipvtltd@gmail.com" className="text-forest font-bold">jeevanshailipvtltd@gmail.com</a><br />
+          Phone: +91 7607033877<br />
           Banda, Uttar Pradesh - 210001, India.
         </p>
       </div>
     </div>
   );
 };
-

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { Layout } from './components/layout/Layout';
 
 // Public Pages
@@ -40,8 +41,9 @@ import { AdminSettings } from './pages/admin/AdminSettings';
 
 export const App: React.FC = () => {
   return (
-    <AuthProvider>
-      <CartProvider>
+    <LanguageProvider>
+      <AuthProvider>
+        <CartProvider>
         <BrowserRouter>
           <Routes>
             {/* Public Storefront Routes with Header and Footer */}
@@ -88,10 +90,10 @@ export const App: React.FC = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
-      </CartProvider>
-    </AuthProvider>
+        </CartProvider>
+      </AuthProvider>
+    </LanguageProvider>
   );
 };
 
 export default App;
-

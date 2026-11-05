@@ -23,7 +23,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({
       success: true,
-      message: 'Thank you for reaching out to GIWANSALLY! Our Ayurvedic care team will get back to you shortly.',
+      message: 'Thank you for reaching out to JEEVAN SHAILI. Our Ayurvedic care team will get back to you shortly.',
       data: contact
     });
   } catch (error: any) {
@@ -32,4 +32,3 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 });
 
 export default router;
-

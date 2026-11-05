@@ -4,16 +4,13 @@ import { api } from '../../services/api';
 
 export const AdminSettings: React.FC = () => {
   const [settings, setSettings] = useState({
-    brandName: 'GIWANSALLY',
-    phone: '+91 8840091758',
-    email: 'shubhamcoder@gmail.com',
-    location: 'Banda, Uttar Pradesh, India',
+    brandName: 'JEEVAN SHAILI',
+    phone: '+91 7607033877',
+    email: 'jeevanshailipvtltd@gmail.com',
+    location: 'BANGALIPURA, BANDA, UTTAR PRADESH - 210001, INDIA',
     shippingCharge: 49,
     freeShippingMinimum: 499,
     codEnabled: true,
-    instagramUrl: 'https://instagram.com/giwansally',
-    facebookUrl: 'https://facebook.com/giwansally',
-    youtubeUrl: 'https://youtube.com/@giwansally'
   });
 
   const [saving, setSaving] = useState(false);
@@ -164,4 +161,3 @@ export const AdminSettings: React.FC = () => {
     </div>
   );
 };
-

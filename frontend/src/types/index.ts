@@ -37,8 +37,12 @@ export interface Product {
 export interface Category {
   _id: string;
   name: string;
+  nameHindi?: string;
+  nameEnglish?: string;
   slug: string;
   description?: string;
+  descriptionHindi?: string;
+  descriptionEnglish?: string;
   image?: string;
   sortOrder: number;
   isActive: boolean;
@@ -156,4 +160,3 @@ export interface AdminUser {
   role: string;
   lastLogin?: string;
 }
-

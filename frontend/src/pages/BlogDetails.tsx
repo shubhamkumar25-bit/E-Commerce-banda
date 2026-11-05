@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, ArrowRight } from 'lucide-react';
-import { api } from '../services/api';
+import { api, resolveImageUrl } from '../services/api';
 import { Blog } from '../types';
+import { SafeImage } from '../components/common/SafeImage';
 
 export const BlogDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -77,8 +78,8 @@ export const BlogDetails: React.FC = () => {
 
       {/* Featured Image */}
       <div className="aspect-[16/9] rounded-3xl overflow-hidden bg-cream-light border border-cream-dark shadow-sm">
-        <img
-          src={blog.image || '/images/products/bottle-botanicals.png'}
+        <SafeImage
+          src={resolveImageUrl(blog.image)}
           alt={blog.title}
           className="w-full h-full object-cover"
         />
@@ -108,7 +109,7 @@ export const BlogDetails: React.FC = () => {
       {/* CTA Box */}
       <div className="bg-gradient-to-r from-forest to-forest-dark text-cream p-8 rounded-3xl shadow-luxury flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="space-y-1 text-center sm:text-left">
-          <h3 className="font-serif text-xl font-bold text-white">Experience GIWANSALLY Liquid Manjan</h3>
+          <h3 className="font-serif text-xl font-bold text-white">Explore JEEVAN SHAILI Ayurvedic Oral Care</h3>
           <p className="text-xs text-cream/80">Gentle on enamel, powerful on oral bacteria. Formulated in Banda, UP.</p>
         </div>
         <Link
@@ -122,4 +123,3 @@ export const BlogDetails: React.FC = () => {
     </div>
   );
 };
-

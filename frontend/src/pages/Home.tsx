@@ -18,6 +18,7 @@ import { Product, Blog } from '../types';
 import { ProductCard } from '../components/common/ProductCard';
 import { RatingStars } from '../components/common/RatingStars';
 import { Newsletter } from '../components/common/Newsletter';
+import { SafeImage } from '../components/common/SafeImage';
 
 export const Home: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -53,16 +54,16 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-forest/10 border border-forest/20 text-forest px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
-                <span>The Herbal Oral Care Revolution • Banda, UP</span>
+                <span>Traditional Ayurvedic Oral Care • Banda, UP</span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-forest tracking-tight leading-[1.15]">
                 Traditional Ayurvedic Wisdom, <br className="hidden sm:inline" />
-                <span className="text-gold-dark italic">Pure Liquid Manjan.</span>
+                <span className="text-gold-dark italic">Jeevan Shaili Dant Manjan.</span>
               </h1>
 
               <p className="text-slate-700 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Step beyond harsh abrasive dry tooth powders. Experience <strong className="text-forest">GIWANSALLY Ayurvedic Liquid Manjan</strong> — formulated with concentrated hydro-extracts of Clove, Babool, Bakul, and Majuphal to gently tighten gums and protect natural enamel without friction.
+                Jeevan Shaili Ayurvedic Dant Manjan is inspired by traditional Ayurvedic oral care practices. Make it part of your daily oral care routine according to the product packaging instructions.
               </p>
 
               {/* Dual Action Buttons */}
@@ -71,7 +72,7 @@ export const Home: React.FC = () => {
                   to="/shop"
                   className="w-full sm:w-auto bg-forest hover:bg-forest-dark text-cream font-bold px-8 py-4 rounded-full text-sm tracking-wider uppercase transition shadow-luxury flex items-center justify-center gap-2 group"
                 >
-                  <span>Shop Liquid Manjan</span>
+                  <span>Shop Dant Manjan</span>
                   <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -84,14 +85,14 @@ export const Home: React.FC = () => {
               </div>
 
               {/* Key Trust Signals */}
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-cream-dark/80 text-left">
+              <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-cream-dark/80 text-left">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center text-forest shrink-0">
-                    <Droplets className="w-4 h-4 text-gold" />
+                    <Leaf className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h5 className="text-xs font-bold text-forest">100% Liquid</h5>
-                    <p className="text-[11px] text-slate-500">Zero Enamel Abrasion</p>
+                    <h5 className="text-xs font-bold text-forest">Herbal Tooth Powder</h5>
+                    <p className="text-[11px] text-slate-500">Traditional oral care</p>
                   </div>
                 </div>
 
@@ -123,16 +124,16 @@ export const Home: React.FC = () => {
                 {/* Golden Sunburst Backdrop */}
                 <div className="absolute inset-4 bg-gradient-to-tr from-gold/20 via-cream to-forest/10 rounded-full blur-xl" />
                 
-                <img
-                  src="/images/products/bottle-hero.png"
-                  alt="GIWANSALLY Ayurvedic Liquid Manjan Hero Bottle Mockup"
+                <SafeImage
+                  src="/images/products/jeevan-shaili-dant-manjan.jpg"
+                  alt="Jeevan Shaili Ayurvedic Dant Manjan product jars"
                   className="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* Floating Badge 1: Banda Origin */}
                 <div className="absolute -bottom-2 -left-2 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-luxury border border-cream-dark z-20 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-forest flex items-center justify-center text-gold font-bold text-xs">
-                    GWS
+                    JS
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Ayurvedic Formulation</p>
@@ -183,7 +184,7 @@ export const Home: React.FC = () => {
               <Droplets className="w-6 h-6 text-gold" />
             </div>
             <div>
-              <h4 className="font-bold text-sm text-forest">Liquid Manjan Bottle</h4>
+              <h4 className="font-bold text-sm text-forest">Jeevan Shaili Dant Manjan</h4>
               <p className="text-xs text-slate-500">Mess-free dropper precision</p>
             </div>
           </div>
@@ -225,16 +226,16 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE GIWANSALLY & PRODUCT TRANSPARENCY */}
+      {/* 4. WHY CHOOSE JEEVAN SHAILI & PRODUCT TRANSPARENCY */}
       <section className="bg-cream py-16 sm:py-20 border-y border-cream-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold">Rooted in Ayurveda, Proven in Nature</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-forest">
-              Why Liquid Manjan is Changing Dental Care
+              Traditional Ayurvedic Oral Care
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Traditional tooth powders served our ancestors well, but modern dentistry confirms that gritty powders can erode tooth enamel over time. GIWANSALLY preserves the potent Ayurvedic botanical recipes while eliminating friction completely.
+              Jeevan Shaili Ayurvedic Dant Manjan is inspired by traditional Ayurvedic oral care practices. Product information should always be read from the actual packaging.
             </p>
           </div>
 
@@ -245,7 +246,7 @@ export const Home: React.FC = () => {
               </div>
               <h3 className="font-serif text-xl font-bold text-forest">Zero Micro-Abrasion</h3>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                Conventional tooth powders contain chalk or abrasive ash that scuffs outer enamel. GIWANSALLY Liquid Manjan is 100% fluid, ensuring gentle cleansing for everyday use.
+                Use the herbal tooth powder according to the product packaging and your regular oral care routine.
               </p>
             </div>
 
@@ -373,7 +374,7 @@ export const Home: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold">Simple 3-Minute Routine</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-forest">
-              How to Use GIWANSALLY Liquid Manjan
+              How to Use Ayurvedic Dant Manjan
             </h2>
             <p className="text-slate-600 text-sm">
               Incorporate our liquid formulation into your daily morning and bedtime oral regimen.
@@ -436,7 +437,7 @@ export const Home: React.FC = () => {
                 "Complete relief from gum bleeding!"
               </h4>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                I switched from regular chemical toothpaste to GIWANSALLY Liquid Manjan. The natural clove and babool taste is amazing. Within 10 days of gentle massaging, my gum sensitivity reduced drastically.
+                Jeevan Shaili makes it easy to discover a traditional Ayurvedic-inspired oral care routine.
               </p>
             </div>
             <div className="pt-4 mt-4 border-t border-cream-dark flex items-center justify-between text-xs">
@@ -508,10 +509,10 @@ export const Home: React.FC = () => {
                 Crafted with Authenticity &amp; Pure Botanical Pride
               </h2>
               <p className="text-cream/80 text-sm sm:text-base leading-relaxed">
-                GIWANSALLY was founded in Banda, Uttar Pradesh, with a singular mission: to restore the dignity of traditional Indian oral hygiene through contemporary, clean, liquid science.
+                JEEVAN SHAILI PVT. LTD. is based in Bangalipura, Banda, Uttar Pradesh.
               </p>
               <p className="text-cream/70 text-xs sm:text-sm leading-relaxed">
-                We reject harsh artificial foaming chemicals, artificial sweeteners, micro-abrasive chalks, and unverified promises. Every bottle of GIWANSALLY Liquid Manjan represents honest herbal transparency.
+                We focus on clear product information and avoid unsupported medical claims.
               </p>
               <div className="pt-2">
                 <Link
@@ -526,8 +527,8 @@ export const Home: React.FC = () => {
 
             <div className="relative flex justify-center">
               <img
-                src="/images/products/bottle-lifestyle.png"
-                alt="GIWANSALLY Morning Ritual"
+                src="/images/products/jeevan-shaili-dant-manjan.jpg"
+                alt="Jeevan Shaili Ayurvedic Dant Manjan"
                 className="w-full max-w-md rounded-3xl border-2 border-gold/40 shadow-2xl"
               />
             </div>
@@ -558,7 +559,7 @@ export const Home: React.FC = () => {
             <article key={blog._id} className="bg-white rounded-2xl overflow-hidden border border-cream-dark hover:border-gold/50 shadow-sm flex flex-col h-full group">
               <Link to={`/blog/${blog.slug}`} className="block aspect-[16/10] overflow-hidden bg-cream-light">
                 <img
-                  src={blog.image || '/images/products/bottle-botanicals.png'}
+                  src={blog.image || '/images/products/jeevan-shaili-dant-manjan.jpg'}
                   alt={blog.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -600,4 +601,3 @@ export const Home: React.FC = () => {
     </div>
   );
 };
-

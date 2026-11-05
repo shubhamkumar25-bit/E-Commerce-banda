@@ -8,7 +8,7 @@ export const AnnouncementBar: React.FC = () => {
         <div className="flex items-center gap-2 justify-center">
           <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
           <span>
-            🌿 Authentic Ayurvedic Liquid Manjan from <strong className="text-gold">Banda, UP</strong> | Flat ₹50 OFF on orders above ₹499 with code <strong className="text-gold underline">AYURVEDA50</strong>
+            🌿 JEEVAN SHAILI Ayurvedic Dant Manjan from <strong className="text-gold">Banda, UP</strong>
           </span>
         </div>
         <div className="hidden md:flex items-center gap-6 text-cream/80 text-[11px]">
@@ -23,4 +23,3 @@ export const AnnouncementBar: React.FC = () => {
     </div>
   );
 };
-

@@ -7,29 +7,8 @@ export const AdminCustomers: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch unique customers from orders API
-    api.getAdminOrders().then((data) => {
-      const orders = data.orders || [];
-      const map = new Map();
-      orders.forEach((o: any) => {
-        const mob = o.customer.mobile;
-        if (!map.has(mob)) {
-          map.set(mob, {
-            name: o.customer.name,
-            mobile: mob,
-            email: o.customer.email || 'N/A',
-            city: o.shippingAddress.city,
-            state: o.shippingAddress.state,
-            totalOrders: 1,
-            totalSpent: o.pricing.total
-          });
-        } else {
-          const c = map.get(mob);
-          c.totalOrders += 1;
-          c.totalSpent += o.pricing.total;
-        }
-      });
-      setCustomers(Array.from(map.values()));
+    api.getAdminCustomers().then((data) => {
+      setCustomers(data.customers || []);
       setLoading(false);
     }).catch(() => setLoading(false));
   }, []);
@@ -85,4 +64,3 @@ export const AdminCustomers: React.FC = () => {
     </div>
   );
 };
-

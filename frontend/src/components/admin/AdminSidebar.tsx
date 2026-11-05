@@ -42,9 +42,9 @@ export const AdminSidebar: React.FC = () => {
       {/* Brand Header */}
       <div className="p-6 border-b border-cream/10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/logo-icon.svg" alt="GIWANSALLY Emblem" className="w-9 h-9" />
+          <img src="/jeevan-shaili-logo.png" alt="JEEVAN SHAILI Emblem" className="w-9 h-9 object-contain" />
           <div>
-            <h2 className="font-serif font-bold text-white tracking-wider text-base">GIWANSALLY</h2>
+            <h2 className="font-serif font-bold text-white tracking-wider text-base">JEEVAN SHAILI</h2>
             <p className="text-[10px] text-gold uppercase tracking-widest font-semibold">Admin CMS</p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export const AdminSidebar: React.FC = () => {
       {/* Admin User Info */}
       <div className="px-6 py-3 bg-forest/40 border-b border-cream/10 text-xs">
         <p className="text-white font-bold truncate">{admin?.name || 'Administrator'}</p>
-        <p className="text-[10px] text-gold truncate">{admin?.email || 'admin@giwansally.com'}</p>
+        <p className="text-[10px] text-gold truncate">{admin?.email || 'jeevanshailipvtltd@gmail.com'}</p>
       </div>
 
       {/* Nav Menu */}
@@ -100,4 +100,3 @@ export const AdminSidebar: React.FC = () => {
     </aside>
   );
 };
-

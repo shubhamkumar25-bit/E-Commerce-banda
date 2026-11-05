@@ -54,7 +54,7 @@ export interface IOrder extends Document {
 }
 
 const orderSchema = new Schema<IOrder>({
-  orderId: { type: String, required: true, unique: true, index: true },
+  orderId: { type: String, required: true, unique: true },
   customer: {
     name: { type: String, required: true, trim: true },
     mobile: { type: String, required: true, trim: true },
@@ -121,7 +121,6 @@ const orderSchema = new Schema<IOrder>({
   notes: String
 }, { timestamps: true });
 
-orderSchema.index({ orderId: 1 });
 orderSchema.index({ 'customer.mobile': 1 });
 orderSchema.index({ orderStatus: 1 });
 orderSchema.index({ paymentStatus: 1 });

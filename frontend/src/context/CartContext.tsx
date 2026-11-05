@@ -21,14 +21,22 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'giwansally_guest_cart';
-const COUPON_STORAGE_KEY = 'giwansally_applied_coupon';
+const CART_STORAGE_KEY = 'jeevan_shaili_guest_cart';
+const COUPON_STORAGE_KEY = 'jeevan_shaili_applied_coupon';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
+      const parsed = saved ? JSON.parse(saved) : [];
+      if (!Array.isArray(parsed)) return [];
+      return parsed
+        .filter((item) => item?.productId && item?.name)
+        .map((item) => {
+          const maxStock = Number(item.maxStock) > 0 ? Number(item.maxStock) : 99;
+          const quantity = Number(item.quantity) > 0 ? Number(item.quantity) : 1;
+          return { ...item, maxStock, quantity: Math.min(quantity, maxStock) };
+        });
     } catch {
       return [];
     }
@@ -58,6 +66,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [appliedCoupon]);
 
   const addToCart = (product: Product, quantity = 1) => {
+    if (product.stock <= 0) return;
     setItems((prevItems) => {
       const existing = prevItems.find((item) => item.productId === product._id);
       if (existing) {
@@ -76,8 +85,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             slug: product.slug,
             price: product.price,
             salePrice: product.salePrice,
-            image: product.images[0] || '/images/products/bottle-hero.png',
-            volume: product.volume || '100ml',
+            image: product.images[0] || '/images/products/jeevan-shaili-dant-manjan.jpg',
+            volume: product.volume || 'Tooth powder',
             quantity: Math.min(quantity, product.stock || 99),
             maxStock: product.stock || 99
           }
@@ -198,4 +207,3 @@ export const useCart = () => {
   }
   return context;
 };
-

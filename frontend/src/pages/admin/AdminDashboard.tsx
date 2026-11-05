@@ -29,29 +29,20 @@ export const AdminDashboard: React.FC = () => {
     Promise.all([
       api.getAdminStats(),
       api.getAdminOrders({ limit: '6' }),
-      api.getProducts()
+      api.getAdminProducts({ limit: '100' })
     ]).then(([statsData, ordersData, prodData]) => {
       setStats({
-        totalOrders: statsData?.totalOrders || ordersData?.total || 14,
-        pendingOrders: statsData?.pendingOrders || 3,
-        deliveredOrders: statsData?.deliveredOrders || 11,
-        totalRevenue: statsData?.totalRevenue || 12450
+        totalOrders: statsData?.totalOrders || 0,
+        pendingOrders: statsData?.pendingOrders || 0,
+        deliveredOrders: statsData?.deliveredOrders || 0,
+        totalRevenue: statsData?.totalRevenue || 0
       });
       setRecentOrders(ordersData?.orders || []);
 
-      const lowStock = (prodData?.products || []).filter((p: Product) => p.stock <= 15);
+      const lowStock = (prodData?.products || []).filter((p: Product) => p.stock <= 10);
       setLowStockProducts(lowStock);
       setLoading(false);
-    }).catch(() => {
-      // Mock stats for dashboard preview
-      setStats({
-        totalOrders: 18,
-        pendingOrders: 4,
-        deliveredOrders: 14,
-        totalRevenue: 15890
-      });
-      setLoading(false);
-    });
+    }).catch(() => setLoading(false));
   }, []);
 
   return (
@@ -64,7 +55,7 @@ export const AdminDashboard: React.FC = () => {
             Store Performance Overview
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
-            GIWANSALLY Ayurvedic Liquid Manjan • Banda, UP Operations
+            JEEVAN SHAILI Ayurvedic Dant Manjan • Banda, UP Operations
           </p>
         </div>
 
@@ -247,4 +238,3 @@ export const AdminDashboard: React.FC = () => {
     </div>
   );
 };
-

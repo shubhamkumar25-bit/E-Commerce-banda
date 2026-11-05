@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, ShoppingBag, ArrowRight, Tag, Truck, ShieldCheck, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { SafeImage } from '../components/common/SafeImage';
+import { resolveImageUrl } from '../services/api';
 
 export const Cart: React.FC = () => {
   const {
@@ -49,7 +51,7 @@ export const Cart: React.FC = () => {
         </div>
         <h2 className="font-serif text-3xl font-extrabold text-forest">Your Cart is Empty</h2>
         <p className="text-slate-600 text-sm max-w-md mx-auto">
-          Explore our breakthrough Ayurvedic Liquid Manjan formulations crafted with pride in Banda, Uttar Pradesh.
+          Explore Jeevan Shaili Ayurvedic Dant Manjan, crafted with care in Banda, Uttar Pradesh.
         </p>
         <Link
           to="/shop"
@@ -102,8 +104,8 @@ export const Cart: React.FC = () => {
                   
                   {/* Thumbnail & Title */}
                   <div className="flex items-center gap-4 w-full sm:w-auto">
-                    <img
-                      src={item.image}
+                    <SafeImage
+                      src={resolveImageUrl(item.image)}
                       alt={item.name}
                       className="w-20 h-20 object-contain p-2 bg-cream-light rounded-2xl border border-cream-dark shrink-0"
                     />
@@ -267,4 +269,3 @@ export const Cart: React.FC = () => {
     </div>
   );
 };
-

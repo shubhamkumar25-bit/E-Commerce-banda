@@ -1,14 +1,27 @@
 import { Router, Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import rateLimit from 'express-rate-limit';
 import { Admin } from '../models/Admin';
 import { adminAuth, AuthRequest } from '../middleware/auth';
+import { isDatabaseConnected } from '../config/database';
 
 const router = Router();
+const adminLoginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'Too many login attempts. Try again later.' }
+});
 
 // POST /api/auth/admin/login
-router.post('/admin/login', async (req: Request, res: Response): Promise<void> => {
+router.post('/admin/login', adminLoginLimiter, async (req: Request, res: Response): Promise<void> => {
   try {
+    if (!isDatabaseConnected()) {
+      res.status(503).json({ success: false, message: 'Database connection unavailable.' });
+      return;
+    }
     const { email, password } = req.body;
     if (!email || !password) {
       res.status(400).json({ success: false, message: 'Email and password are required' });
@@ -37,13 +50,13 @@ router.post('/admin/login', async (req: Request, res: Response): Promise<void> =
 
     const token = jwt.sign(
       { id: admin._id, email: admin.email, role: admin.role },
-      process.env.JWT_SECRET || 'giwansally_ayurvedic_secret_jwt_key_2026_super_secure',
+      process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
 
     res.json({
       success: true,
-      message: 'Welcome back to GIWANSALLY Admin Portal',
+      message: 'Welcome back to JEEVAN SHAILI Admin Portal',
       data: {
         token,
         admin: {
@@ -74,4 +87,3 @@ router.post('/admin/logout', adminAuth, (req: Request, res: Response) => {
 });
 
 export default router;
-

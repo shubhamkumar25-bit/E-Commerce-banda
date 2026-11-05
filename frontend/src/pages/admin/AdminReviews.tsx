@@ -5,7 +5,7 @@ export const AdminReviews: React.FC = () => {
   const [reviews, setReviews] = useState([
     {
       _id: 'rev_1',
-      productName: 'GIWANSALLY Ayurvedic Liquid Manjan (Classic 100ml)',
+      productName: 'Jeevan Shaili Ayurvedic Dant Manjan',
       customerName: 'Rajesh Verma (Lucknow)',
       rating: 5,
       comment: 'Bleeding gums stopped within 10 days of gentle swishing. Highly effective!',
@@ -13,7 +13,7 @@ export const AdminReviews: React.FC = () => {
     },
     {
       _id: 'rev_2',
-      productName: 'GIWANSALLY Ayurvedic Liquid Manjan (Classic 100ml)',
+      productName: 'Jeevan Shaili Ayurvedic Dant Manjan',
       customerName: 'Priya Tiwari (Kanpur)',
       rating: 5,
       comment: 'Zero enamel abrasion and very clean packaging from Banda. 5 stars!',
@@ -21,7 +21,7 @@ export const AdminReviews: React.FC = () => {
     },
     {
       _id: 'rev_3',
-      productName: 'GIWANSALLY Liquid Manjan - Gum Defence',
+      productName: 'Jeevan Shaili Ayurvedic Dant Manjan',
       customerName: 'Sunita Mishra (Varanasi)',
       rating: 5,
       comment: 'Great sensitivity relief from cold water tingling.',
@@ -67,4 +67,3 @@ export const AdminReviews: React.FC = () => {
     </div>
   );
 };
-

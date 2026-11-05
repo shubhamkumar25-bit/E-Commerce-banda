@@ -9,12 +9,12 @@ export const TermsConditions: React.FC = () => {
       <div className="bg-white p-8 rounded-3xl border border-cream-dark text-slate-700 text-sm space-y-4 leading-relaxed">
         <h2 className="font-serif font-bold text-lg text-forest">1. Agreement to Terms</h2>
         <p>
-          By accessing or using the GIWANSALLY e-commerce website, you agree to comply with and be bound by these Terms and Conditions. Our operations originate from Banda, Uttar Pradesh, India.
+          By accessing or using the JEEVAN SHAILI e-commerce website, you agree to comply with and be bound by these Terms and Conditions. Our operations originate from Banda, Uttar Pradesh, India.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">2. Product Information &amp; Disclaimer</h2>
         <p>
-          GIWANSALLY Liquid Manjan is an authentic Ayurvedic formulation intended for oral hygiene and gum maintenance. It is not intended to diagnose, cure, or substitute licensed medical dental treatments.
+          Jeevan Shaili Ayurvedic Dant Manjan is a herbal tooth powder intended for oral care. It is not intended to diagnose, cure, or substitute licensed medical dental treatments.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">3. Pricing and Availability</h2>
@@ -30,4 +30,3 @@ export const TermsConditions: React.FC = () => {
     </div>
   );
 };
-

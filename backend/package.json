@@ -1,7 +1,7 @@
 {
-  "name": "giwansally-backend",
+  "name": "jeevan-shaili-backend",
   "version": "1.0.0",
-  "description": "GIWANSALLY Ayurvedic Liquid Manjan Backend API",
+  "description": "JEEVAN SHAILI Ayurvedic Dant Manjan Backend API",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
@@ -40,4 +40,3 @@
     "typescript": "^5.7.3"
   }
 }
-

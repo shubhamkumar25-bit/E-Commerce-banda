@@ -16,7 +16,7 @@ if (isCloudinaryConfigured()) {
   storage = new CloudinaryStorage({
     cloudinary,
     params: {
-      folder: 'giwansally',
+      folder: 'jeevan-shaili',
       allowed_formats: ['jpg', 'jpeg', 'png', 'webp', 'svg'],
       transformation: [{ width: 1200, height: 1200, crop: 'limit', quality: 'auto' }]
     } as any
@@ -30,7 +30,7 @@ if (isCloudinaryConfigured()) {
     filename: (req, file, cb) => {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
       const ext = path.extname(file.originalname);
-      cb(null, `giwansally-${uniqueSuffix}${ext}`);
+      cb(null, `jeevan-shaili-${uniqueSuffix}${ext}`);
     }
   });
 }
@@ -46,4 +46,3 @@ export const upload = multer({
     }
   }
 });
-

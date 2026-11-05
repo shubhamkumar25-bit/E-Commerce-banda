@@ -9,12 +9,12 @@ export const ShippingPolicy: React.FC = () => {
       <div className="bg-white p-8 rounded-3xl border border-cream-dark text-slate-700 text-sm space-y-4 leading-relaxed">
         <h2 className="font-serif font-bold text-lg text-forest">1. Dispatch Hub</h2>
         <p>
-          All GIWANSALLY products are carefully checked, packed, and dispatched directly from our packaging center located in <strong>Banda, Uttar Pradesh, India</strong>.
+          All JEEVAN SHAILI products are carefully checked, packed, and dispatched directly from our packaging center located in <strong>Bangalipura, Banda, Uttar Pradesh - 210001, India</strong>.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">2. Processing Time</h2>
         <p>
-          Orders placed before 3:00 PM are processed and handed over to our courier partners within 24 hours (excluding Sundays and national holidays).
+          Orders are processed and handed over to our courier partners according to the configured fulfillment schedule.
         </p>
 
         <h2 className="font-serif font-bold text-lg text-forest">3. Estimated Delivery Times</h2>
@@ -36,4 +36,3 @@ export const ShippingPolicy: React.FC = () => {
     </div>
   );
 };
-

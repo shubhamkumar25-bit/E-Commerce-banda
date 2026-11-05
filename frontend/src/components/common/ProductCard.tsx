@@ -4,6 +4,8 @@ import { ShoppingBag, Zap, Check, Eye } from 'lucide-react';
 import { Product } from '../../types';
 import { useCart } from '../../context/CartContext';
 import { RatingStars } from './RatingStars';
+import { SafeImage } from './SafeImage';
+import { resolveImageUrl } from '../../services/api';
 
 interface ProductCardProps {
   product: Product;
@@ -75,8 +77,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         to={`/product/${product.slug}`}
         className="block relative aspect-square overflow-hidden bg-gradient-to-b from-cream-light to-white p-6"
       >
-        <img
-          src={product.images[0] || '/images/products/bottle-hero.png'}
+        <SafeImage
+          src={resolveImageUrl(product.images[0])}
           alt={product.name}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
@@ -112,7 +114,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         {/* Pricing & Stock Status */}
         <div className="mt-4 pt-3 border-t border-cream-dark/60">
-          <div className="flex items-baseline gap-2 mb-3">
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3">
             <span className="text-xl font-extrabold text-forest">
               ₹{displayPrice}
             </span>
@@ -121,7 +123,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 ₹{originalPrice}
               </span>
             )}
-            <span className="ml-auto text-[11px] font-semibold">
+            <span className="ml-auto text-[11px] font-semibold text-right">
               {isOutOfStock ? (
                 <span className="text-red-500">Out of Stock</span>
               ) : product.stock <= 5 ? (
@@ -199,4 +201,3 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     </div>
   );
 };
-

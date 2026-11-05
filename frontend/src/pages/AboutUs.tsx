@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Droplets, Leaf, HeartHandshake, MapPin, Phone, Mail, Award } from 'lucide-react';
+import { SITE } from '../config/site';
 
 export const AboutUs: React.FC = () => {
   return (
@@ -10,12 +11,12 @@ export const AboutUs: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-forest to-forest-dark text-cream p-8 sm:p-16 rounded-3xl relative overflow-hidden shadow-luxury">
           <div className="relative z-10 max-w-2xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-gold">About GIWANSALLY</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gold">About JEEVAN SHAILI</span>
             <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Pioneering Authentic Ayurvedic Liquid Oral Care
+              Traditional Ayurvedic Oral Care for Everyday Life
             </h1>
             <p className="text-cream/80 text-sm sm:text-base leading-relaxed">
-              Rooted in the historic city of Banda, Uttar Pradesh, GIWANSALLY is dedicated to formulating clean, non-abrasive, botanical oral health solutions inspired by classical Ayurvedic treatises.
+              Rooted in Banda, Uttar Pradesh, JEEVAN SHAILI PVT. LTD. presents Ayurvedic Dant Manjan inspired by traditional oral care practices.
             </p>
           </div>
         </div>
@@ -31,7 +32,7 @@ export const AboutUs: React.FC = () => {
             </div>
             <h3 className="font-serif text-2xl font-bold text-forest">Our Vision</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              To redefine everyday oral hygiene across India and beyond by replacing harsh synthetic chemical pastes and gritty micro-abrasive powders with pure, biocompatible liquid Ayurvedic herbal formulations.
+              To make traditional Ayurvedic-inspired oral care part of everyday routines with clear, honest product information.
             </p>
           </div>
 
@@ -41,7 +42,7 @@ export const AboutUs: React.FC = () => {
             </div>
             <h3 className="font-serif text-2xl font-bold text-forest">Our Mission</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              To deliver uncompromising botanical efficacy, transparent ingredient disclosures, and direct-to-consumer reliability from Banda, Uttar Pradesh, ensuring every family has access to natural enamel and gum protection.
+              To deliver transparent product information and dependable service from Banda, Uttar Pradesh.
             </p>
           </div>
 
@@ -53,15 +54,15 @@ export const AboutUs: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-gold">Our Guiding Pillars</span>
-            <h2 className="font-serif text-3xl font-extrabold text-forest">The GIWANSALLY Commitment</h2>
+            <h2 className="font-serif text-3xl font-extrabold text-forest">The JEEVAN SHAILI Commitment</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-2xl border border-cream-dark space-y-3">
               <Droplets className="w-8 h-8 text-gold" />
-              <h4 className="font-bold text-forest text-base">Pure Liquid Manjan</h4>
+              <h4 className="font-bold text-forest text-base">Ayurvedic Dant Manjan</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Zero chalk or ash particles, protecting tooth enamel from progressive micro-abrasions.
+                A herbal tooth powder inspired by traditional Ayurvedic oral care.
               </p>
             </div>
 
@@ -69,7 +70,7 @@ export const AboutUs: React.FC = () => {
               <Leaf className="w-8 h-8 text-gold" />
               <h4 className="font-bold text-forest text-base">Classical Botanicals</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Authentic extracts of Clove, Babool, Bakul, Majuphal, and Vajradanti.
+                Display actual ingredients according to the product packaging.
               </p>
             </div>
 
@@ -77,7 +78,7 @@ export const AboutUs: React.FC = () => {
               <Award className="w-8 h-8 text-gold" />
               <h4 className="font-bold text-forest text-base">Full Transparency</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Clear ingredient descriptions with evidence-supported oral hygiene actions.
+                Clear product information without unsupported claims.
               </p>
             </div>
 
@@ -100,9 +101,10 @@ export const AboutUs: React.FC = () => {
             <div>
               <h4 className="font-serif font-bold text-forest text-base">Headquarters &amp; Hub</h4>
               <p className="text-xs text-slate-600 mt-1">
-                GIWANSALLY Herbals<br />
-                Banda, Uttar Pradesh - 210001<br />
-                India
+                Founded by {SITE.founder}.<br />
+                Website developed by {SITE.developer}.<br />
+                {SITE.companyName}<br />
+                {SITE.location}
               </p>
             </div>
           </div>
@@ -113,8 +115,8 @@ export const AboutUs: React.FC = () => {
               <h4 className="font-serif font-bold text-forest text-base">Customer Helpline</h4>
               <p className="text-xs text-slate-600 mt-1">
                 Direct Phone / WhatsApp:<br />
-                <a href="tel:8840091758" className="font-bold text-forest hover:text-gold transition">
-                  +91 8840091758
+                <a href={`tel:${SITE.phone}`} className="font-bold text-forest hover:text-gold transition">
+                  {SITE.phoneDisplay}
                 </a>
               </p>
             </div>
@@ -126,8 +128,8 @@ export const AboutUs: React.FC = () => {
               <h4 className="font-serif font-bold text-forest text-base">Email Enquiries</h4>
               <p className="text-xs text-slate-600 mt-1">
                 Official Support:<br />
-                <a href="mailto:shubhamcoder@gmail.com" className="font-bold text-forest hover:text-gold transition break-all">
-                  shubhamcoder@gmail.com
+                <a href={`mailto:${SITE.email}`} className="font-bold text-forest hover:text-gold transition break-all">
+                  {SITE.email}
                 </a>
               </p>
             </div>
@@ -138,4 +140,3 @@ export const AboutUs: React.FC = () => {
     </div>
   );
 };
-

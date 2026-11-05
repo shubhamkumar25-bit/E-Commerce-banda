@@ -14,12 +14,13 @@ import {
   Clock,
   Heart
 } from 'lucide-react';
-import { api } from '../services/api';
+import { api, resolveImageUrl } from '../services/api';
 import { Product, Review } from '../types';
 import { useCart } from '../context/CartContext';
 import { RatingStars } from '../components/common/RatingStars';
 import { PinCodeChecker } from '../components/common/PinCodeChecker';
 import { ProductCard } from '../components/common/ProductCard';
+import { SafeImage } from '../components/common/SafeImage';
 
 export const ProductDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -127,7 +128,7 @@ export const ProductDetails: React.FC = () => {
 
   const productImages = product.images?.length > 0
     ? product.images
-    : ['/images/products/bottle-hero.png', '/images/products/bottle-front.png', '/images/products/bottle-botanicals.png'];
+    : ['/images/products/jeevan-shaili-dant-manjan.jpg'];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
@@ -157,8 +158,8 @@ export const ProductDetails: React.FC = () => {
               {product.volume || '100ml'}
             </span>
 
-            <img
-              src={productImages[activeImageIndex] || '/images/products/bottle-hero.png'}
+            <SafeImage
+              src={resolveImageUrl(productImages[activeImageIndex])}
               alt={product.name}
               className="w-full h-full object-contain drop-shadow-xl transition-all duration-300"
             />
@@ -175,7 +176,7 @@ export const ProductDetails: React.FC = () => {
                   activeImageIndex === idx ? 'border-gold shadow-md' : 'border-cream-dark hover:border-forest/40'
                 }`}
               >
-                <img src={img} alt={`${product.name} view ${idx + 1}`} className="w-full h-full object-contain" />
+                <SafeImage src={resolveImageUrl(img)} alt={`${product.name} view ${idx + 1}`} className="w-full h-full object-contain" />
               </button>
             ))}
           </div>
@@ -187,7 +188,7 @@ export const ProductDetails: React.FC = () => {
           {/* Category Tag */}
           <div className="flex items-center gap-2">
             <span className="text-xs font-extrabold uppercase tracking-widest text-gold bg-gold/15 px-3 py-1 rounded-full border border-gold/30">
-              Authentic Liquid Manjan
+              Ayurvedic Oral Care
             </span>
             <span className="text-xs text-slate-400">•</span>
             <span className="text-xs text-forest font-semibold">Origin: Banda, Uttar Pradesh</span>
@@ -444,7 +445,7 @@ export const ProductDetails: React.FC = () => {
                 <h4 className="font-bold text-forest text-sm uppercase tracking-wider">Morning Ayurvedic Regimen:</h4>
                 <ol className="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-600">
                   <li>Cleanse tongue thoroughly with a copper scraper upon waking.</li>
-                  <li>Drop 5-8 drops of GIWANSALLY Liquid Manjan directly in the mouth or on your toothbrush.</li>
+                  <li>Use according to the instructions on the product packaging.</li>
                   <li>Gently massage teeth and gums in circular motions for 2 to 3 minutes.</li>
                   <li>Rinse thoroughly with fresh water. Do not eat or drink for 15 minutes after use for optimal botanical absorption.</li>
                 </ol>
@@ -515,7 +516,7 @@ export const ProductDetails: React.FC = () => {
                       value={reviewComment}
                       onChange={(e) => setReviewComment(e.target.value)}
                       required
-                      placeholder="Share your experience with GIWANSALLY Liquid Manjan..."
+                      placeholder="Share your experience with Jeevan Shaili Ayurvedic Dant Manjan..."
                       className="w-full px-3 py-2 text-xs rounded-xl border border-cream-dark bg-white focus:outline-none focus:border-gold"
                     />
                   </div>
@@ -557,4 +558,3 @@ export const ProductDetails: React.FC = () => {
     </div>
   );
 };
-

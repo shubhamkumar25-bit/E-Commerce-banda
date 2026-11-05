@@ -12,10 +12,10 @@ export const OurStory: React.FC = () => {
           Our Brand Journey
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-forest tracking-tight">
-          The Story Behind GIWANSALLY
+          The Story Behind JEEVAN SHAILI
         </h1>
         <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-          How a passion for authentic Ayurvedic herbology in Banda, Uttar Pradesh, led to an oral care breakthrough: Pure Liquid Manjan.
+          How JEEVAN SHAILI PVT. LTD. brings Ayurvedic-inspired Dant Manjan from Banda, Uttar Pradesh to everyday oral care.
         </p>
       </section>
 
@@ -34,7 +34,7 @@ export const OurStory: React.FC = () => {
           </div>
 
           <div className="p-6 bg-cream rounded-2xl border-l-4 border-gold space-y-2">
-            <h3 className="font-serif font-bold text-forest text-lg">The GIWANSALLY Realization</h3>
+            <h3 className="font-serif font-bold text-forest text-lg">The JEEVAN SHAILI Vision</h3>
             <p className="italic text-slate-700 text-sm">
               "What if the therapeutic essence of traditional Ayurvedic dant-manjan herbs could be delivered in an unctuous, non-abrasive liquid medium? A formulation that cleanses gently, penetrates deep between teeth, and protects enamel instead of scratching it."
             </p>
@@ -43,17 +43,17 @@ export const OurStory: React.FC = () => {
           <div className="space-y-4">
             <h2 className="font-serif text-2xl font-bold text-forest">Born in Banda, Uttar Pradesh</h2>
             <p>
-              Formulated in Banda, Uttar Pradesh — a region steeped in classical herbal heritage — GIWANSALLY was built on strict scientific formulation principles. Rather than dry milling, we extract the phyto-actives of Clove (Laung), Babool bark (Acacia Arabica), Bakul, and Vajradanti into a pure fluid carrier.
+              Based in Banda, Uttar Pradesh, JEEVAN SHAILI PVT. LTD. is committed to transparent, packaging-led Ayurvedic oral care.
             </p>
             <p>
-              The result is <strong>GIWANSALLY Ayurvedic Liquid Manjan</strong>. It requires just a few drops to gently swish or massage around gums. It leaves teeth naturally clean, tightens gums, and freshens breath with real pudina and clove, entirely free of synthetic abrasives.
+              The product is <strong>Jeevan Shaili Ayurvedic Dant Manjan</strong>, a herbal tooth powder. Use it according to the instructions and information on the product packaging.
             </p>
           </div>
 
           <div className="pt-6 border-t border-cream-dark flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <p className="font-serif font-bold text-forest text-base">Explore the Liquid Difference</p>
-              <p className="text-xs text-slate-500">Handcrafted &amp; bottled in Banda, Uttar Pradesh</p>
+              <p className="font-serif font-bold text-forest text-base">Explore Ayurvedic Dant Manjan</p>
+              <p className="text-xs text-slate-500">From JEEVAN SHAILI PVT. LTD., Banda, Uttar Pradesh</p>
             </div>
             <Link
               to="/shop"
@@ -70,4 +70,3 @@ export const OurStory: React.FC = () => {
     </div>
   );
 };
-

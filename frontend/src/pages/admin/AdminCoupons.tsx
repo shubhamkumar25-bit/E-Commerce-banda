@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Tag, Plus, Check } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Tag } from 'lucide-react';
+import { api } from '../../services/api';
 
 export const AdminCoupons: React.FC = () => {
-  const [coupons, setCoupons] = useState([
-    { code: 'AYURVEDA50', type: 'fixed', value: 50, minOrderValue: 499, description: 'Flat ₹50 OFF on orders above ₹499' },
-    { code: 'FIRSTBUY10', type: 'percentage', value: 10, minOrderValue: 249, description: '10% OFF on first Ayurvedic order' },
-    { code: 'BANDAHERBAL', type: 'percentage', value: 15, minOrderValue: 699, description: '15% festival discount on ₹699+' }
-  ]);
+  const [coupons, setCoupons] = useState<any[]>([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    api.getAdminCoupons().then(setCoupons).catch((err) => setError(err.message));
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -15,6 +17,7 @@ export const AdminCoupons: React.FC = () => {
           <h1 className="font-serif text-2xl font-bold text-forest">Discount Coupons &amp; Offers</h1>
           <p className="text-xs text-slate-500">Configure promotional discount codes</p>
         </div>
+        {error && <p className="rounded-xl border border-red-200 bg-red-50 p-3 text-xs text-red-700">{error}</p>}
       </div>
 
       <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
@@ -29,8 +32,8 @@ export const AdminCoupons: React.FC = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 font-medium">
-            {coupons.map((cpn, idx) => (
-              <tr key={idx} className="hover:bg-slate-50/80 transition">
+            {coupons.map((cpn) => (
+              <tr key={cpn._id} className="hover:bg-slate-50/80 transition">
                 <td className="py-4 px-6 font-mono font-bold text-forest text-sm flex items-center gap-2">
                   <Tag className="w-4 h-4 text-gold" />
                   <span>{cpn.code}</span>
@@ -47,10 +50,10 @@ export const AdminCoupons: React.FC = () => {
                 </td>
               </tr>
             ))}
+            {!coupons.length && <tr><td colSpan={5} className="py-8 text-center text-slate-400">No coupons configured.</td></tr>}
           </tbody>
         </table>
       </div>
     </div>
   );
 };
-

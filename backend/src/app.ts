@@ -19,6 +19,7 @@ import contactRoutes from './routes/contact';
 import subscriberRoutes from './routes/subscribers';
 import adminRoutes from './routes/admin/index';
 import { errorHandler } from './middleware/errorHandler';
+import { isDatabaseConnected } from './config/database';
 
 const app = express();
 
@@ -57,14 +58,22 @@ app.use('/api/payments/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+const requireDatabase = (_req: express.Request, res: express.Response, next: express.NextFunction) => {
+  if (!isDatabaseConnected()) {
+    res.status(503).json({ success: false, message: 'Database is not connected. Configure MONGODB_URI and restart the API.' });
+    return;
+  }
+  next();
+};
+
 // API Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/categories', categoryRoutes);
+app.use('/api/products', requireDatabase, productRoutes);
+app.use('/api/categories', requireDatabase, categoryRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/coupons', couponRoutes);
-app.use('/api/blogs', blogRoutes);
+app.use('/api/blogs', requireDatabase, blogRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/subscribers', subscriberRoutes);
@@ -72,11 +81,13 @@ app.use('/api/admin', adminRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'OK',
-    brand: 'GIWANSALLY',
-    product: 'Ayurvedic Liquid Manjan',
-    location: 'Banda, Uttar Pradesh, India',
+  const database = isDatabaseConnected();
+  res.status(database ? 200 : 503).json({
+    status: database ? 'OK' : 'DEGRADED',
+    database: database ? 'connected' : 'disconnected',
+    brand: 'JEEVAN SHAILI',
+    product: 'Jeevan Shaili Ayurvedic Dant Manjan',
+    location: 'Bangalipura, Banda, Uttar Pradesh - 210001, India',
     timestamp: new Date().toISOString()
   });
 });
@@ -85,4 +96,3 @@ app.get('/api/health', (req, res) => {
 app.use(errorHandler);
 
 export default app;
-

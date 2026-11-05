@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Calendar, User, Tag, Search } from 'lucide-react';
-import { api } from '../services/api';
+import { api, resolveImageUrl } from '../services/api';
 import { Blog } from '../types';
+import { SafeImage } from '../components/common/SafeImage';
 
 export const BlogPage: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -35,7 +36,7 @@ export const BlogPage: React.FC = () => {
           Ancient Wisdom for Modern Oral Health
         </h1>
         <p className="text-slate-600 text-sm leading-relaxed">
-          Learn about the science of liquid manjan, botanical ingredient benefits, and Ayurvedic Dinacharya rituals for whole-body wellness.
+          Learn about Ayurvedic oral care practices, product information, and wellness routines.
         </p>
       </div>
 
@@ -49,7 +50,7 @@ export const BlogPage: React.FC = () => {
         >
           All Topics
         </button>
-        {['Liquid Manjan', 'Ayurveda', 'Enamel Protection', 'Clove Oil', 'Dinacharya'].map((tag) => (
+        {['Ayurveda', 'Oral Care', 'Herbal Wellness', 'Dant Manjan', 'Dinacharya'].map((tag) => (
           <button
             key={tag}
             onClick={() => setSearchParams({ tag })}
@@ -78,8 +79,8 @@ export const BlogPage: React.FC = () => {
           {blogs.map((blog) => (
             <article key={blog._id} className="bg-white rounded-3xl overflow-hidden border border-cream-dark hover:border-gold/50 shadow-sm flex flex-col h-full group">
               <Link to={`/blog/${blog.slug}`} className="block aspect-[16/10] overflow-hidden bg-cream-light">
-                <img
-                  src={blog.image || '/images/products/bottle-botanicals.png'}
+                <SafeImage
+                  src={resolveImageUrl(blog.image)}
                   alt={blog.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -120,4 +121,3 @@ export const BlogPage: React.FC = () => {
     </div>
   );
 };
-

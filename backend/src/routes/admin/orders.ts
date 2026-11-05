@@ -1,5 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { Order } from '../../models/Order';
+import { Product } from '../../models/Product';
+import { Category } from '../../models/Category';
 
 const router = Router();
 
@@ -50,6 +52,9 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
 router.get('/stats', async (req: Request, res: Response): Promise<void> => {
   try {
     const totalOrders = await Order.countDocuments();
+    const totalProducts = await Product.countDocuments();
+    const totalCategories = await Category.countDocuments();
+    const lowStockProducts = await Product.countDocuments({ stock: { $lte: 10 } });
     const pendingOrders = await Order.countDocuments({ orderStatus: 'placed' });
     const processingOrders = await Order.countDocuments({ orderStatus: { $in: ['confirmed', 'processing'] } });
     const shippedOrders = await Order.countDocuments({ orderStatus: { $in: ['shipped', 'out_for_delivery'] } });
@@ -78,14 +83,18 @@ router.get('/stats', async (req: Request, res: Response): Promise<void> => {
           count: { $sum: 1 }
         }
       },
-      { $sort: { '_id.year': 1, '_id.month': 1 } },
-      { $limit: 6 }
+      { $sort: { '_id.year': -1, '_id.month': -1 } },
+      { $limit: 6 },
+      { $sort: { '_id.year': 1, '_id.month': 1 } }
     ]);
 
     res.json({
       success: true,
       data: {
         totalOrders,
+        totalProducts,
+        totalCategories,
+        lowStockProducts,
         pendingOrders,
         processingOrders,
         shippedOrders,
@@ -171,4 +180,3 @@ router.put('/:id/status', async (req: Request, res: Response): Promise<void> => 
 });
 
 export default router;
-

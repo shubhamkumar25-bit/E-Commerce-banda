@@ -6,20 +6,20 @@ export const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      q: 'What is GIWANSALLY Ayurvedic Liquid Manjan?',
-      a: 'GIWANSALLY Liquid Manjan is an innovative Ayurvedic oral formulation. Unlike traditional abrasive tooth powders or synthetic chemical toothpastes, our formula extracts the active therapeutic benefits of Clove, Babool, Bakul, and Majuphal into a fluid form that gently cleanses teeth and tightens gums without causing enamel micro-abrasion.'
+      q: 'What is Jeevan Shaili Ayurvedic Dant Manjan?',
+      a: 'Jeevan Shaili Ayurvedic Dant Manjan is a herbal tooth powder inspired by traditional Ayurvedic oral care practices. Use it according to the product packaging.'
     },
     {
-      q: 'How do I use Liquid Manjan properly?',
-      a: 'Place 5 to 8 drops directly in your mouth or onto a soft-bristled toothbrush. Gently massage your gums and teeth for 2 to 3 minutes, allowing the herbal extracts to penetrate interdental gaps. Spit out and rinse with fresh water. For best results, use morning and evening.'
+      q: 'How do I use Dant Manjan properly?',
+      a: 'Use Jeevan Shaili Ayurvedic Dant Manjan according to the instructions on the product packaging.'
     },
     {
-      q: 'Is GIWANSALLY Liquid Manjan safe for daily use?',
-      a: 'Yes, 100%. Because our formula contains no harsh abrasives (like chalk or ash) and no synthetic foaming surfactants (SLS-free), it is gentle enough for everyday, lifelong use.'
+      q: 'Can I use Dant Manjan every day?',
+      a: 'Follow the usage guidance printed on the product packaging and consult a qualified dental professional for individual concerns.'
     },
     {
       q: 'Do I need to create an account to order?',
-      a: 'No! GIWANSALLY provides a seamless 1-step Guest Checkout. You can place your order by providing your shipping address and contact number without creating a password.'
+      a: 'No. JEEVAN SHAILI provides guest checkout. You can place an order by providing your shipping address and contact number.'
     },
     {
       q: 'What payment options are available?',
@@ -30,8 +30,8 @@ export const FAQ: React.FC = () => {
       a: 'Orders within Uttar Pradesh are typically delivered within 2-3 business days. Orders to other states in India take 4-5 business days. You can track your parcel live on our Track My Order page.'
     },
     {
-      q: 'Where is GIWANSALLY manufactured?',
-      a: 'GIWANSALLY products are formulated, bottled, and dispatched from Banda, Uttar Pradesh, India.'
+      q: 'Where is JEEVAN SHAILI based?',
+      a: 'JEEVAN SHAILI PVT. LTD. is based in Bangalipura, Banda, Uttar Pradesh - 210001, India.'
     }
   ];
 
@@ -45,7 +45,7 @@ export const FAQ: React.FC = () => {
           Frequently Asked Questions
         </h1>
         <p className="text-slate-600 text-xs sm:text-sm">
-          Everything you need to know about GIWANSALLY Liquid Manjan and ordering.
+          Everything you need to know about JEEVAN SHAILI Ayurvedic Dant Manjan and ordering.
         </p>
       </div>
 
@@ -77,4 +77,3 @@ export const FAQ: React.FC = () => {
     </div>
   );
 };
-

@@ -16,7 +16,7 @@ export const Newsletter: React.FC = () => {
       setStatus({
         loading: false,
         success: true,
-        message: res.message || 'Thank you for subscribing to GIWANSALLY wellness updates!'
+        message: res.message || 'Thank you for subscribing to JEEVAN SHAILI wellness updates!'
       });
       setEmail('');
     } catch (err: any) {
@@ -40,7 +40,7 @@ export const Newsletter: React.FC = () => {
         </div>
 
         <h2 className="font-serif text-2xl sm:text-4xl font-bold tracking-wide text-white mb-3">
-          Join the GIWANSALLY Oral Care Community
+          Join the JEEVAN SHAILI Oral Care Community
         </h2>
 
         <p className="text-cream/80 text-sm max-w-xl mx-auto mb-8 leading-relaxed">
@@ -80,4 +80,3 @@ export const Newsletter: React.FC = () => {
     </section>
   );
 };
-

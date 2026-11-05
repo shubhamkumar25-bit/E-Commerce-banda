@@ -22,7 +22,7 @@ const blogSchema = new Schema<IBlog>({
   excerpt: { type: String, required: true },
   content: { type: String, required: true },
   image: { type: String, default: '' },
-  author: { type: String, default: 'GIWANSALLY Ayurvedic Care' },
+  author: { type: String, default: 'JEEVAN SHAILI Ayurvedic Care' },
   tags: [{ type: String }],
   isPublished: { type: Boolean, default: true },
   metaTitle: String,
@@ -30,9 +30,7 @@ const blogSchema = new Schema<IBlog>({
   publishedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 
-blogSchema.index({ slug: 1 });
 blogSchema.index({ isPublished: 1 });
 blogSchema.index({ publishedAt: -1 });
 
 export const Blog = mongoose.model<IBlog>('Blog', blogSchema);
-

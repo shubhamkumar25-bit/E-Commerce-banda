@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, Package, Phone, Mail, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { SITE } from '../config/site';
 
 export const OrderSuccess: React.FC = () => {
   const { orderId } = useParams<{ orderId: string }>();
@@ -34,10 +35,10 @@ export const OrderSuccess: React.FC = () => {
           Order Confirmed
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl font-extrabold text-forest">
-          Thank You for Choosing GIWANSALLY!
+          Thank You for Choosing JEEVAN SHAILI!
         </h1>
         <p className="text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
-          Your order for authentic Ayurvedic Liquid Manjan has been registered with our Banda, UP packaging facility.
+          Your order for Jeevan Shaili Ayurvedic Dant Manjan has been registered with our Banda, UP team.
         </p>
       </div>
 
@@ -74,12 +75,12 @@ export const OrderSuccess: React.FC = () => {
       <div className="pt-8 border-t border-cream-dark text-xs text-slate-500 space-y-2">
         <p className="font-bold text-forest">Need assistance with your delivery?</p>
         <div className="flex items-center justify-center gap-6">
-          <a href="tel:8840091758" className="hover:text-gold transition flex items-center gap-1 font-semibold">
-            <Phone className="w-3.5 h-3.5 text-gold" /> +91 8840091758
+          <a href={`tel:${SITE.phone}`} className="hover:text-gold transition flex items-center gap-1 font-semibold">
+            <Phone className="w-3.5 h-3.5 text-gold" /> {SITE.phoneDisplay}
           </a>
           <span>•</span>
-          <a href="mailto:shubhamcoder@gmail.com" className="hover:text-gold transition flex items-center gap-1 font-semibold">
-            <Mail className="w-3.5 h-3.5 text-gold" /> shubhamcoder@gmail.com
+          <a href={`mailto:${SITE.email}`} className="hover:text-gold transition flex items-center gap-1 font-semibold">
+            <Mail className="w-3.5 h-3.5 text-gold" /> {SITE.email}
           </a>
         </div>
       </div>
@@ -87,4 +88,3 @@ export const OrderSuccess: React.FC = () => {
     </div>
   );
 };
-

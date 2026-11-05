@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ShieldCheck, Heart } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ShieldCheck } from 'lucide-react';
+import { SITE } from '../../config/site';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,15 +9,15 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main 4 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-cream/15">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-12 border-b border-cream/15">
           
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/logo-icon.svg" alt="GIWANSALLY Logo" className="w-12 h-12" />
+              <img src="/jeevan-shaili-logo.png" alt="JEEVAN SHAILI Logo" className="w-12 h-12 object-contain" />
               <div>
                 <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                  GIWANSALLY
+                  JEEVAN SHAILI
                 </span>
                 <p className="text-[10px] font-semibold tracking-widest text-gold uppercase">
                   Ayurvedic Oral Care
@@ -25,7 +26,7 @@ export const Footer: React.FC = () => {
             </Link>
             
             <p className="text-cream/80 text-xs sm:text-sm leading-relaxed">
-              GIWANSALLY brings a modern breakthrough to Indian oral health with pure Liquid Manjan. Handcrafted from authentic botanicals in Banda, Uttar Pradesh, to protect tooth enamel and revitalize gums naturally.
+              {SITE.tagline}
             </p>
 
             {/* Social Media Links */}
@@ -33,7 +34,7 @@ export const Footer: React.FC = () => {
               <h5 className="text-xs uppercase tracking-wider text-gold font-bold mb-3">Connect With Us</h5>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://instagram.com/giwansally"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-forest flex items-center justify-center text-cream hover:bg-gold hover:text-forest transition"
@@ -42,7 +43,7 @@ export const Footer: React.FC = () => {
                   <Instagram className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://facebook.com/giwansally"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-forest flex items-center justify-center text-cream hover:bg-gold hover:text-forest transition"
@@ -51,7 +52,7 @@ export const Footer: React.FC = () => {
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://youtube.com/@giwansally"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-forest flex items-center justify-center text-cream hover:bg-gold hover:text-forest transition"
@@ -80,8 +81,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=ayurvedic-liquid-manjan" className="hover:text-gold transition flex items-center gap-2">
-                  <span>›</span> Ayurvedic Liquid Manjan
+                <Link to="/shop?category=ayurvedic-oral-care" className="hover:text-gold transition flex items-center gap-2">
+                <span>›</span> Ayurvedic Dant Manjan
                 </Link>
               </li>
               <li>
@@ -155,8 +156,8 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">GIWANSALLY Herbals</p>
-                  <p className="text-cream/70 text-xs">Banda, Uttar Pradesh - 210001, India</p>
+                  <p className="font-semibold text-white">{SITE.companyName}</p>
+                  <p className="text-cream/70 text-xs">{SITE.location}</p>
                 </div>
               </div>
 
@@ -164,8 +165,8 @@ export const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-gold shrink-0" />
                 <div>
                   <p className="text-xs text-cream/60">Phone Support:</p>
-                  <a href="tel:8840091758" className="font-semibold text-white hover:text-gold transition">
-                    +91 8840091758
+                  <a href={`tel:${SITE.phone}`} className="font-semibold text-white hover:text-gold transition">
+                    {SITE.phoneDisplay}
                   </a>
                 </div>
               </div>
@@ -174,8 +175,8 @@ export const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 text-gold shrink-0" />
                 <div>
                   <p className="text-xs text-cream/60">Email Inquiries:</p>
-                  <a href="mailto:shubhamcoder@gmail.com" className="font-semibold text-white hover:text-gold transition break-all">
-                    shubhamcoder@gmail.com
+                  <a href={`mailto:${SITE.email}`} className="font-semibold text-white hover:text-gold transition break-all">
+                    {SITE.email}
                   </a>
                 </div>
               </div>
@@ -190,28 +191,15 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Section: Payment Badges & Copyright */}
+        {/* Bottom Section: Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-cream/70">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-            <span>© {new Date().getFullYear()} GIWANSALLY. All Rights Reserved.</span>
+            <span>© 2026 {SITE.companyName} All Rights Reserved.</span>
             <span className="hidden sm:inline">•</span>
-            <span>Crafted with <Heart className="w-3 h-3 text-red-400 inline mx-0.5" /> in Banda, Uttar Pradesh, India</span>
-          </div>
-
-          {/* Payment Method Badges */}
-          <div className="flex items-center flex-wrap justify-center gap-2">
-            <span className="text-[11px] font-semibold text-cream/80 mr-1">Secured By:</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">UPI</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">Google Pay</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">PhonePe</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">Paytm</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">RuPay</span>
-            <span className="px-2.5 py-1 bg-white/10 rounded text-[10px] font-bold text-cream border border-white/10">Cards / NetBanking</span>
-            <span className="px-2.5 py-1 bg-gold/20 text-gold rounded text-[10px] font-bold border border-gold/40">Cash on Delivery</span>
+            <span>Founded by Pushpendra Kumar Rajpoot | Developed by {SITE.developer}</span>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-

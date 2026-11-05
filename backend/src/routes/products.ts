@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { Product } from '../models/Product';
+import { Category } from '../models/Category';
 import { adminAuth } from '../middleware/auth';
 import { upload } from '../middleware/upload';
 
@@ -31,7 +32,12 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
     const query: any = { isActive: true };
 
     if (category && category !== 'all') {
-      query.category = category;
+      const categoryRecord = await Category.findOne({ slug: category, isActive: true }).select('_id');
+      if (!categoryRecord) {
+        res.json({ success: true, data: { products: [], total: 0, page: Number(page), pages: 0 } });
+        return;
+      }
+      query.category = categoryRecord._id;
     }
 
     if (featured === 'true') {
@@ -252,4 +258,3 @@ router.delete('/:id', adminAuth, async (req: Request, res: Response): Promise<vo
 });
 
 export default router;
-

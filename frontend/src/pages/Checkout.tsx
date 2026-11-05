@@ -11,7 +11,8 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { api } from '../services/api';
+import { api, resolveImageUrl } from '../services/api';
+import { SafeImage } from '../components/common/SafeImage';
 
 declare global {
   interface Window {
@@ -142,9 +143,9 @@ export const Checkout: React.FC = () => {
           key: razorpayKey,
           amount: Math.round(createdOrder.total * 100),
           currency: 'INR',
-          name: 'GIWANSALLY',
-          description: `Order ${createdOrder.orderId} - Ayurvedic Liquid Manjan`,
-          image: '/logo-icon.svg',
+          name: 'JEEVAN SHAILI',
+          description: `Order ${createdOrder.orderId} - Ayurvedic Dant Manjan`,
+          image: '/jeevan-shaili-logo.png',
           order_id: createdOrder.razorpayOrderId,
           handler: async function (response: any) {
             try {
@@ -251,7 +252,7 @@ export const Checkout: React.FC = () => {
                   value={formData.mobile}
                   onChange={handleInputChange}
                   required
-                  placeholder="10-digit mobile (e.g. 8840091758)"
+                  placeholder="10-digit mobile (e.g. 7607033877)"
                   className="w-full px-4 py-2.5 bg-cream-light rounded-xl border border-cream-dark text-xs text-forest font-medium focus:outline-none focus:border-gold"
                 />
               </div>
@@ -433,7 +434,7 @@ export const Checkout: React.FC = () => {
                   />
                 </div>
                 <p className="text-[11px] text-slate-500 leading-relaxed">
-                  Pay cash directly to the courier executive when your GIWANSALLY parcel is delivered.
+                  Pay cash directly to the courier executive when your JEEVAN SHAILI parcel is delivered.
                 </p>
                 <div className="text-[10px] text-emerald-700 font-bold">
                   ✓ Available across all Indian PIN codes
@@ -457,7 +458,7 @@ export const Checkout: React.FC = () => {
               {items.map((it) => (
                 <div key={it.productId} className="flex items-center justify-between gap-3 text-xs">
                   <div className="flex items-center gap-2.5">
-                    <img src={it.image} alt={it.name} className="w-10 h-10 object-contain p-1 bg-cream-light rounded-lg border border-cream-dark" />
+                    <SafeImage src={resolveImageUrl(it.image)} alt={it.name} className="w-10 h-10 object-contain p-1 bg-cream-light rounded-lg border border-cream-dark" />
                     <div>
                       <p className="font-bold text-forest truncate max-w-[150px]">{it.name}</p>
                       <p className="text-slate-400 text-[10px]">Qty: {it.quantity} • {it.volume}</p>
@@ -516,7 +517,7 @@ export const Checkout: React.FC = () => {
               <p className="font-semibold text-forest flex items-center justify-center gap-1">
                 <ShieldCheck className="w-4 h-4 text-gold" /> 256-Bit SSL Encrypted Checkout
               </p>
-              <p>GIWANSALLY Herbals, Banda, Uttar Pradesh</p>
+              <p>JEEVAN SHAILI PVT. LTD., Bangalipura, Banda, Uttar Pradesh</p>
             </div>
           </div>
         </div>
@@ -526,4 +527,3 @@ export const Checkout: React.FC = () => {
     </div>
   );
 };
-

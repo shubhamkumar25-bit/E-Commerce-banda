@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { api } from '../services/api';
+import { SITE } from '../config/site';
 
 export const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -39,10 +40,10 @@ export const ContactUs: React.FC = () => {
           We Are Here For You
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-forest">
-          Get in Touch with GIWANSALLY
+          Get in Touch with JEEVAN SHAILI
         </h1>
         <p className="text-slate-600 text-sm">
-          Have questions about Liquid Manjan, bulk orders, or your delivery? Reach our dedicated herbal care desk in Banda, Uttar Pradesh.
+          Have questions about Ayurvedic Dant Manjan, bulk orders, or your delivery? Reach our team in Banda, Uttar Pradesh.
         </p>
       </div>
 
@@ -61,9 +62,8 @@ export const ContactUs: React.FC = () => {
                 <div>
                   <p className="font-bold text-white text-sm">Manufacturing &amp; Office</p>
                   <p className="text-cream/80 text-xs mt-0.5">
-                    GIWANSALLY Herbals<br />
-                    Banda, Uttar Pradesh - 210001<br />
-                    India
+                    {SITE.companyName}<br />
+                    {SITE.location}
                   </p>
                 </div>
               </div>
@@ -72,10 +72,10 @@ export const ContactUs: React.FC = () => {
                 <Phone className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-white text-sm">Phone / WhatsApp</p>
-                  <a href="tel:8840091758" className="text-gold font-bold hover:underline block mt-0.5">
-                    +91 8840091758
+                  <a href={`tel:${SITE.phone}`} className="text-gold font-bold hover:underline block mt-0.5">
+                    {SITE.phoneDisplay}
                   </a>
-                  <p className="text-[11px] text-cream/60">Mon - Sat: 9:00 AM – 7:00 PM IST</p>
+                  <a href={`https://wa.me/${SITE.phone}`} className="text-cream/80 text-[11px] hover:text-gold" target="_blank" rel="noreferrer">Message us on WhatsApp</a>
                 </div>
               </div>
 
@@ -83,10 +83,9 @@ export const ContactUs: React.FC = () => {
                 <Mail className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-white text-sm">Email Address</p>
-                  <a href="mailto:shubhamcoder@gmail.com" className="text-gold font-bold hover:underline block mt-0.5 break-all">
-                    shubhamcoder@gmail.com
+                  <a href={`mailto:${SITE.email}`} className="text-gold font-bold hover:underline block mt-0.5 break-all">
+                    {SITE.email}
                   </a>
-                  <p className="text-[11px] text-cream/60">Average reply within 24 hours</p>
                 </div>
               </div>
             </div>
@@ -124,7 +123,8 @@ export const ContactUs: React.FC = () => {
                   type="tel"
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                  placeholder="e.g. 8840091758"
+                  placeholder="e.g. 7607033877"
+                  pattern="[0-9+ ()-]{10,15}"
                   className="w-full px-4 py-2.5 bg-cream-light rounded-xl border border-cream-dark text-xs text-forest focus:outline-none focus:border-gold"
                 />
               </div>
@@ -161,6 +161,7 @@ export const ContactUs: React.FC = () => {
               <textarea
                 rows={4}
                 required
+                minLength={10}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Write your message here..."
@@ -193,4 +194,3 @@ export const ContactUs: React.FC = () => {
     </div>
   );
 };
-
